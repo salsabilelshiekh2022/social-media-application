@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app/features/onboarding/presentation/views/onboarding_view.dart';
 
 import '../../features/login/presentation/views/login_page.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
@@ -15,6 +16,10 @@ class AppRouter {
       case Routes.splashPage:
         return MaterialPageRoute(
           builder: (_) => const SplashPage(),
+        );
+      case Routes.onBoardingPage:
+        return MaterialPageRoute(
+          builder: (_) => const OnboardingView(),
         );
 
       default:
