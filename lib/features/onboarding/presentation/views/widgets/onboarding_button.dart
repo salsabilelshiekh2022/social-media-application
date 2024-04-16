@@ -18,7 +18,7 @@ class OnboardingButton extends StatelessWidget {
     return InkWell(
       onTap: () {
         index == onBoardingDummyData(context).length - 1
-            ? context.pushReplacementNamed(Routes.loginPage)
+            ? context.pushReplacementNamed(Routes.welcome)
             : controller.nextPage(
                 duration: const Duration(milliseconds: 200),
                 curve: Curves.easeIn);

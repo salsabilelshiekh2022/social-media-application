@@ -13,6 +13,7 @@ abstract class AppAssets {
   static const String facebookIcon = 'assets/images/svg/facebook_icon.svg';
   static const String femaleIcon = 'assets/images/svg/female_icon.svg';
   static const String googleIcon = 'assets/images/svg/google_icon.svg';
+  static const String appleIcon = 'assets/images/svg/apple_icon.svg';
   static const String logo = 'assets/images/svg/logo.svg';
   static const String mailIcon = 'assets/images/svg/mail_icon.svg';
   static const String maleIcon = 'assets/images/svg/male_icon.svg';
