@@ -44,14 +44,16 @@ class WelcomeBody extends StatelessWidget {
             AppButton(
               title: 'Sign in with Password',
               onTap: () {
-                context.pushNamed(Routes.loginPage);
+                context.pushNamed(Routes.loginView);
               },
             ),
             verticalSpace(30),
             HaveAccountOrNot(
               haveAccountOrAlreadyHave: 'Don’t have an account? ',
               signUpOrSignIn: 'Sign Up',
-              onTap: () {},
+              onTap: () {
+                context.pushNamed(Routes.registerView);
+              },
             ),
           ],
         ),

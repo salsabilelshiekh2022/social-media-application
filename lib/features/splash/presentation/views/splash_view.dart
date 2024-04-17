@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      context.pushReplacementNamed(Routes.onBoardingPage);
+      context.pushReplacementNamed(Routes.onBoardingView);
     });
     super.initState();
   }
