@@ -8,4 +8,5 @@ abstract class Routes {
   static const String navBar = '/NavBar';
   static const String welcomeView = '/welcomeView';
   static const String registerView = '/registerView';
+  static const String selectGenderView = '/selectGenderView';
 }

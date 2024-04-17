@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:social_media_app/core/routing/routes.dart';
+import 'package:social_media_app/core/utils/extensions.dart';
 
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_button.dart';
@@ -26,7 +28,11 @@ class RegisterForm extends StatelessWidget {
             suffixIcon: true,
           ),
           verticalSpace(48),
-          AppButton(title: 'Sign up ', onTap: () {}),
+          AppButton(
+              title: 'Sign up ',
+              onTap: () {
+                context.pushNamed(Routes.selectGenderView);
+              }),
           verticalSpace(124),
         ],
       ),

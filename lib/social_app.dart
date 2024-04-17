@@ -18,7 +18,7 @@ class SocialApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           scaffoldMessengerKey: scaffoldKey,
           theme: ThemeData(
-            fontFamily: "Inter",
+            fontFamily: "Urbanist",
             primaryColor: AppColors.mainColor,
             appBarTheme: const AppBarTheme(
               elevation: 0.0,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:social_media_app/features/login/presentation/views/welcome_view.dart';
 import 'package:social_media_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:social_media_app/features/register/presentation/views/register_view.dart';
+import 'package:social_media_app/features/register/presentation/views/select_gender_view.dart';
 
 import '../../features/login/presentation/views/login_page.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
@@ -30,6 +31,10 @@ class AppRouter {
       case Routes.registerView:
         return MaterialPageRoute(
           builder: (_) => const RegisterView(),
+        );
+      case Routes.selectGenderView:
+        return MaterialPageRoute(
+          builder: (_) => const SelectGenderView(),
         );
 
       default:
