@@ -16,7 +16,7 @@ class SkipButtonAndContinueButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: skipMethod,
           child: Container(
             width: 184.w,
             height: 58.h,
@@ -33,7 +33,7 @@ class SkipButtonAndContinueButton extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: continueMethod,
           child: Container(
             width: 184.w,
             height: 58.h,

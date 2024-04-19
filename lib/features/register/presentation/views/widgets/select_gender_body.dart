@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:social_media_app/core/routing/routes.dart';
+import 'package:social_media_app/core/utils/extensions.dart';
 
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/spacing.dart';
@@ -39,8 +41,12 @@ class SelectGenderBody extends StatelessWidget {
           ),
           verticalSpace(58),
           SkipButtonAndContinueButton(
-            skipMethod: () {},
-            continueMethod: () {},
+            skipMethod: () {
+              context.pushNamed(Routes.fillYourProfileView);
+            },
+            continueMethod: () {
+              context.pushNamed(Routes.fillYourProfileView);
+            },
           )
         ],
       ),
