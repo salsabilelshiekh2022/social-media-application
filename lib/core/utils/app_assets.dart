@@ -21,4 +21,5 @@ abstract class AppAssets {
   static const String emailIcon = 'assets/images/svg/email_icon.svg';
   static const String lockIcon = 'assets/images/svg/lock_icon.svg';
   static const String eyeIcon = 'assets/images/svg/eye_icon.svg';
+  static const String loadingGif = 'assets/images/svg/loading_gif.gif';
 }

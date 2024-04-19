@@ -7,6 +7,7 @@ import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/utils/spacing.dart';
 import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../../../../core/widgets/congratulation_alert.dart';
 import 'skip_button_and_continue_button.dart';
 
 class FillYourProfileBody extends StatelessWidget {
@@ -120,7 +121,11 @@ class FillYourProfileForm extends StatelessWidget {
         ),
         verticalSpace(185),
         SkipButtonAndContinueButton(
-          continueMethod: () {},
+          continueMethod: () {
+            showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => const CongratulationAlart());
+          },
           skipMethod: () {},
         )
       ]),

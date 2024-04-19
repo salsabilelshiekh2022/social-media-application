@@ -19,6 +19,7 @@ class SocialApp extends StatelessWidget {
           scaffoldMessengerKey: scaffoldKey,
           theme: ThemeData(
             fontFamily: "Urbanist",
+            brightness: Brightness.dark,
             primaryColor: AppColors.mainColor,
             appBarTheme: const AppBarTheme(
               elevation: 0.0,
