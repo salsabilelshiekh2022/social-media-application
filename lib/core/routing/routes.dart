@@ -11,4 +11,5 @@ abstract class Routes {
   static const String selectGenderView = '/selectGenderView';
   static const String fillYourProfileView = '/fillYourProfileView';
   static const String forgotPasswordMethodView = '/forgotPasswordMethodView';
+  static const String forgotPasswordOtpView = '/forgotPasswordOtpView';
 }

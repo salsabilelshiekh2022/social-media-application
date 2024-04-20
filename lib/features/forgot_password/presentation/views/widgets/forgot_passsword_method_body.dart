@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:social_media_app/core/routing/routes.dart';
 import 'package:social_media_app/core/utils/app_assets.dart';
 import 'package:social_media_app/core/utils/extensions.dart';
 import 'package:social_media_app/core/utils/spacing.dart';
@@ -50,7 +51,11 @@ class ForgotPasswordMethodBody extends StatelessWidget {
           verticalSpace(24),
           const ForgotPasswordMethod(),
           const Spacer(),
-          AppButton(title: 'Continue', onTap: () {})
+          AppButton(
+              title: 'Continue',
+              onTap: () {
+                context.pushReplacementNamed(Routes.forgotPasswordOtpView);
+              })
         ],
       ),
     ));
