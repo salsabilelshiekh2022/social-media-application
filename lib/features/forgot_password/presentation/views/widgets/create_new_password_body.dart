@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:social_media_app/core/utils/app_assets.dart';
 import 'package:social_media_app/core/utils/extensions.dart';
 import 'package:social_media_app/core/widgets/app_button.dart';
-import 'package:social_media_app/features/forgot_password/presentation/views/widgets/otp_text_field.dart';
 
-import '../../../../../core/routing/routes.dart';
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/utils/spacing.dart';
+import 'create_new_password_form.dart';
 
-class ForgotPasswordOtpBody extends StatelessWidget {
-  const ForgotPasswordOtpBody({super.key});
+class CreateNewPasswordBody extends StatelessWidget {
+  const CreateNewPasswordBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +25,7 @@ class ForgotPasswordOtpBody extends StatelessWidget {
             bottom: 48.h,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
@@ -40,24 +41,27 @@ class ForgotPasswordOtpBody extends StatelessWidget {
                   ),
                   horizontalSpace(16),
                   Text(
-                    'Forgot Password',
+                    'Create New Password',
                     style: AppTextStyle.font24whiteBold,
                   ),
                 ],
               ),
-              verticalSpace(97),
+              verticalSpace(68),
+              Center(
+                child: Image.asset(
+                  AppAssets.createNewPass,
+                  width: 360.w,
+                  height: 257.h,
+                ),
+              ),
+              verticalSpace(68),
               Text(
-                'Code has been send to +1 111 ******99',
+                'Create Your New Password',
                 style: AppTextStyle.font18whiteMedium,
               ),
-              verticalSpace(60),
-              const OTPTextField(),
-              verticalSpace(180),
-              AppButton(
-                  title: 'Verify',
-                  onTap: () {
-                    context.pushReplacementNamed(Routes.createNewPasswordView);
-                  }),
+              const CreateNewPasswordForm(),
+              verticalSpace(110),
+              AppButton(title: 'Continue', onTap: () {}),
             ],
           ),
         ),

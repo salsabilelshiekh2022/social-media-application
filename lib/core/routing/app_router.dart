@@ -7,6 +7,7 @@ import 'package:social_media_app/features/register/presentation/views/fill_your_
 import 'package:social_media_app/features/register/presentation/views/register_view.dart';
 import 'package:social_media_app/features/register/presentation/views/select_gender_view.dart';
 
+import '../../features/forgot_password/presentation/views/create_new_password_view.dart';
 import '../../features/login/presentation/views/login_page.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 import 'routes.dart';
@@ -51,6 +52,10 @@ class AppRouter {
       case Routes.forgotPasswordOtpView:
         return MaterialPageRoute(
           builder: (_) => const ForgotPasswordOtpView(),
+        );
+      case Routes.createNewPasswordView:
+        return MaterialPageRoute(
+          builder: (_) => const CreateNewPasswordView(),
         );
 
       default:

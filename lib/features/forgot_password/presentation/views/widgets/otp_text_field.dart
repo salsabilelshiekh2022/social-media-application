@@ -3,6 +3,9 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_media_app/core/theme/app_colors.dart';
 import 'package:social_media_app/core/theme/app_text_styles.dart';
+import 'package:social_media_app/core/utils/extensions.dart';
+
+import '../../../../../core/routing/routes.dart';
 
 class OTPTextField extends StatelessWidget {
   const OTPTextField({super.key});
@@ -26,7 +29,9 @@ class OTPTextField extends StatelessWidget {
       textStyle: AppTextStyle.font24whiteBold,
       filled: true,
       onCodeChanged: (String code) {},
-      onSubmit: (String verificationCode) {},
+      onSubmit: (String verificationCode) {
+        context.pushReplacementNamed(Routes.createNewPasswordView);
+      },
     );
   }
 }
