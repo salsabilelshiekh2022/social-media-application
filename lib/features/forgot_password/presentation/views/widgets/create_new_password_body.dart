@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_media_app/core/utils/app_assets.dart';
 import 'package:social_media_app/core/utils/extensions.dart';
-import 'package:social_media_app/core/widgets/app_button.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
@@ -60,8 +59,6 @@ class CreateNewPasswordBody extends StatelessWidget {
                 style: AppTextStyle.font18whiteMedium,
               ),
               const CreateNewPasswordForm(),
-              verticalSpace(110),
-              AppButton(title: 'Continue', onTap: () {}),
             ],
           ),
         ),
