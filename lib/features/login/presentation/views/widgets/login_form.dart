@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:social_media_app/core/routing/routes.dart';
+import 'package:social_media_app/core/utils/extensions.dart';
 
 import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/utils/spacing.dart';
@@ -30,7 +32,9 @@ class LoginForm extends StatelessWidget {
           AppButton(title: 'Sign in ', onTap: () {}),
           verticalSpace(24),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(Routes.forgotPasswordMethodView);
+            },
             child: Text(
               'Forgot Password?',
               style: AppTextStyle.font16MainColorSemiBold,

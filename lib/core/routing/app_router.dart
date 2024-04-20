@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app/features/forgot_password/presentation/views/forgot_password_method_view.dart';
 import 'package:social_media_app/features/login/presentation/views/welcome_view.dart';
 import 'package:social_media_app/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:social_media_app/features/register/presentation/views/fill_your_profile_view.dart';
@@ -41,6 +42,10 @@ class AppRouter {
       case Routes.fillYourProfileView:
         return MaterialPageRoute(
           builder: (_) => const FillYourProfileView(),
+        );
+      case Routes.forgotPasswordMethodView:
+        return MaterialPageRoute(
+          builder: (_) => const ForgotPasswordMethodView(),
         );
 
       default:
