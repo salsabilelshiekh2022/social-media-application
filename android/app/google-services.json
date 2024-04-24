@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "6028053348",
+    "project_id": "zuzu-ef479",
+    "storage_bucket": "zuzu-ef479.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6028053348:android:9622bc1399136fb65b0871",
+        "android_client_info": {
+          "package_name": "com.example.social_media_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz1gPdOxHPH7QvUzssp-TAeFc3zD2UsrM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
