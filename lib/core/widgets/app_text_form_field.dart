@@ -14,6 +14,7 @@ class AppTextFormField extends StatefulWidget {
     this.keyBoardType,
     this.prefixIcon,
     this.suffixIcon = false,
+    this.controller,
   });
 
   final bool secure;
@@ -23,6 +24,7 @@ class AppTextFormField extends StatefulWidget {
   final TextInputType? keyBoardType;
   final IconData? prefixIcon;
   final bool? suffixIcon;
+  final TextEditingController? controller;
 
   @override
   _AppTextFormFieldState createState() => _AppTextFormFieldState();
@@ -51,6 +53,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
   void dispose() {
     _focusNode.removeListener(_onFocusChange);
     _focusNode.dispose();
+    widget.controller?.dispose();
     super.dispose();
   }
 
@@ -69,6 +72,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
         child: Focus(
           focusNode: _focusNode,
           child: TextFormField(
+            controller: widget.controller,
             keyboardType: widget.keyBoardType,
             obscureText: _showPassword!,
             cursorColor: AppColors.white,
