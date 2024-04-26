@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_media_app/core/routing/routes.dart';
 import 'package:social_media_app/core/utils/extensions.dart';
 
-import '../../../../../core/utils/app_assets.dart';
-import '../../../../../core/utils/spacing.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/spacing.dart';
 import 'gender_widget.dart';
 import 'header.dart';
 import 'skip_button_and_continue_button.dart';

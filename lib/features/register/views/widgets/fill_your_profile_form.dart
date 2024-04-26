@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/spacing.dart';
-import '../../../../../core/widgets/app_text_form_field.dart';
-import '../../../../../core/widgets/congratulation_alert.dart';
+import '../../../../core/utils/spacing.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
+import '../../../../core/widgets/congratulation_alert.dart';
 import 'pick_image_widget.dart';
 import 'skip_button_and_continue_button.dart';
 

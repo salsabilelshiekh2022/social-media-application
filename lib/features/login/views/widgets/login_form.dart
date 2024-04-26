@@ -6,11 +6,11 @@ import 'package:social_media_app/core/utils/extensions.dart';
 import 'package:social_media_app/core/utils/validator.dart';
 import 'package:social_media_app/features/login/cubit/login_cubit.dart';
 
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../core/utils/snack_bar.dart';
-import '../../../../../core/utils/spacing.dart';
-import '../../../../../core/widgets/app_button.dart';
-import '../../../../../core/widgets/app_text_form_field.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/snack_bar.dart';
+import '../../../../core/utils/spacing.dart';
+import '../../../../core/widgets/app_button.dart';
+import '../../../../core/widgets/app_text_form_field.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});

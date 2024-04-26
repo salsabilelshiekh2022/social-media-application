@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:social_media_app/core/utils/snack_bar.dart';
 import 'package:social_media_app/features/login/cubit/login_cubit.dart';
 
-import '../../../../../core/utils/app_assets.dart';
-import '../../../../../core/utils/spacing.dart';
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/utils/spacing.dart';
 import 'social_media_button.dart';
 
 class SocialMediaLogin extends StatelessWidget {

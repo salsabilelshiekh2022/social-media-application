@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_media_app/core/utils/extensions.dart';
 
-import '../../../../../core/routing/routes.dart';
-import '../../../../../core/theme/app_colors.dart';
-import '../../../../../core/theme/app_text_styles.dart';
-import '../../../../../core/utils/spacing.dart';
-import '../../../../../core/widgets/have_account_or_not.dart';
-import '../../../../../core/widgets/or_divider.dart';
-import '../../../../../core/widgets/rounded_social_media_login.dart';
-import 'login_form.dart';
+import '../../../../core/routing/routes.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../core/utils/spacing.dart';
+import '../../../../core/widgets/have_account_or_not.dart';
+import '../../../../core/widgets/or_divider.dart';
+import '../../../../core/widgets/rounded_social_media_login.dart';
+import 'register_form.dart';
 
-class LoginBody extends StatelessWidget {
-  const LoginBody({super.key});
+class RegisterBody extends StatelessWidget {
+  const RegisterBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +36,18 @@ class LoginBody extends StatelessWidget {
                 ),
               ),
               verticalSpace(60),
-              Text('Login to your Account',
-                  style: AppTextStyle.font48whiteBold),
+              Text('Create your Account', style: AppTextStyle.font48whiteBold),
               verticalSpace(45),
-              const LoginForm(),
+              const RegisterForm(),
               const OrDivider(text: 'or continue with'),
               verticalSpace(30),
               const RoundedSocialMediaLogin(),
               verticalSpace(45),
               HaveAccountOrNot(
-                haveAccountOrAlreadyHave: 'Don’t have an account?',
-                signUpOrSignIn: 'Sign up',
+                haveAccountOrAlreadyHave: 'Already have an account?',
+                signUpOrSignIn: 'Sign in',
                 onTap: () {
-                  context.pushReplacementNamed(Routes.registerView);
+                  context.pushReplacementNamed(Routes.loginView);
                 },
               ),
               verticalSpace(48),
