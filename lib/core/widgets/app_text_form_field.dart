@@ -15,6 +15,7 @@ class AppTextFormField extends StatefulWidget {
     this.prefixIcon,
     this.suffixIcon = false,
     this.controller,
+    this.initialValue,
   });
 
   final bool secure;
@@ -25,6 +26,7 @@ class AppTextFormField extends StatefulWidget {
   final IconData? prefixIcon;
   final bool? suffixIcon;
   final TextEditingController? controller;
+  final String? initialValue;
 
   @override
   _AppTextFormFieldState createState() => _AppTextFormFieldState();
@@ -72,6 +74,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
         child: Focus(
           focusNode: _focusNode,
           child: TextFormField(
+            initialValue: widget.initialValue,
             controller: widget.controller,
             keyboardType: widget.keyBoardType,
             obscureText: _showPassword!,
