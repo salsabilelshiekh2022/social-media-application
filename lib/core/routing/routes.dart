@@ -1,10 +1,10 @@
 abstract class Routes {
-  static const String onBoardingView = '/onBoardingPage';
-  static const String loginView = '/loginPage';
+  static const String onBoardingView = '/onBoardingView';
+  static const String loginView = '/loginView';
 
-  static const String homePage = '/homePage';
-  static const String forgotPasswordView = '/forgotPasswordPage';
-  static const String splashView = '/splashPage';
+  static const String homeView = '/homeView';
+  static const String forgotPasswordView = '/forgotPasswordView';
+  static const String splashView = '/splashView';
   static const String navBar = '/NavBar';
   static const String welcomeView = '/welcomeView';
   static const String registerView = '/registerView';

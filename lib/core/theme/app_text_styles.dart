@@ -80,4 +80,21 @@ abstract class AppTextStyle {
     color: AppColors.grey300,
     fontWeight: FontWeightHelper.medium,
   );
+  static TextStyle font14Grey500Medium = TextStyle(
+    fontSize: 14.sp,
+    color: AppColors.grey500,
+    fontWeight: FontWeightHelper.medium,
+  );
+
+  static TextStyle font18WhiteBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.bold,
+    color: AppColors.white,
+  );
+
+  static TextStyle font16Grey500Regular = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.regular,
+    color: AppColors.grey500,
+  );
 }

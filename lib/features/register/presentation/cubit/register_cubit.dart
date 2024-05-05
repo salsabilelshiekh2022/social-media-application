@@ -26,7 +26,10 @@ class RegisterCubit extends Cubit<RegisterState> {
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
       userImg = File(pickedImage.path);
-    } else {}
+      emit(PickImageSuccessState());
+    } else {
+      emit(const PickImageFailureState(message: 'Failed to pick image '));
+    }
   }
 
   Future<void> uploadImage() async {

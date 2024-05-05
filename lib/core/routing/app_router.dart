@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../features/home/presentation/views/nav_bar.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_method_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_otp_view.dart';
+import '../../features/home/presentation/views/home_view.dart';
 import '../../features/login/presentation/views/welcome_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
 import '../../features/register/presentation/views/fill_your_profile_view.dart';
@@ -56,6 +58,14 @@ class AppRouter {
       case Routes.createNewPasswordView:
         return MaterialPageRoute(
           builder: (_) => const CreateNewPasswordView(),
+        );
+      case Routes.homeView:
+        return MaterialPageRoute(
+          builder: (_) => const HomeView(),
+        );
+      case Routes.navBar:
+        return MaterialPageRoute(
+          builder: (_) => const NavBarView(),
         );
 
       default:

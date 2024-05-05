@@ -26,3 +26,10 @@ final class UpdateProfileFailureState extends RegisterState {
   final String message;
   const UpdateProfileFailureState({required this.message});
 }
+
+final class PickImageSuccessState extends RegisterState {}
+
+final class PickImageFailureState extends RegisterState {
+  final String message;
+  const PickImageFailureState({required this.message});
+}

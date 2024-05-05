@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:social_media_app/core/utils/extensions.dart';
+import '../../../../../core/routing/routes.dart';
 import '../../../../../core/utils/validator.dart';
 import '../../cubit/register_cubit.dart';
 
@@ -20,7 +22,11 @@ class FillYourProfileForm extends StatelessWidget {
         if (state is UpdateProfileFailureState) {
           showSnackBar(state.message, Colors.red);
         } else if (state is UpdateProfileSuccessState) {
-          showSnackBar('Success', Colors.green);
+          context.pop();
+          context.pushNamedAndRemoveUntil(
+            Routes.navBar,
+            predicate: (route) => false,
+          );
         } else if (state is UpdateProfileLoadingState) {
           showDialog<String>(
               context: context,
@@ -80,16 +86,12 @@ class FillYourProfileForm extends StatelessWidget {
             SkipButtonAndContinueButton(
               continueMethod: () {
                 context.read<RegisterCubit>().updateProfile();
-                // showDialog<String>(
-                //     context: context,
-                //     builder: (BuildContext context) =>
-                //         const CongratulationAlart());
               },
               skipMethod: () {
-                showDialog<String>(
-                    context: context,
-                    builder: (BuildContext context) =>
-                        const CongratulationAlart());
+                context.pushNamedAndRemoveUntil(
+                  Routes.homeView,
+                  predicate: (route) => false,
+                );
               },
             )
           ]),

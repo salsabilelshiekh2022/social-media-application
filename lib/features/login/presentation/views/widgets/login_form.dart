@@ -24,6 +24,10 @@ class LoginForm extends StatelessWidget {
           showSnackBar(state.message, Colors.red);
         } else if (state is SignInWithEmailAndPasswordSuccessState) {
           showSnackBar('Success', Colors.green);
+          context.pushNamedAndRemoveUntil(
+            Routes.navBar,
+            predicate: (route) => false,
+          );
         }
       },
       builder: (context, state) {
