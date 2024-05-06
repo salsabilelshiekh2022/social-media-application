@@ -12,11 +12,10 @@ class HomeBody extends StatelessWidget {
     return SafeArea(
       child: SingleChildScrollView(
           child: Padding(
-        padding: EdgeInsets.only(top: 3.h, bottom: 50.h),
+        padding: EdgeInsets.only(top: 15.h, bottom: 50.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            verticalSpace(12),
             const HomeAppBar(),
             const Divider(),
             verticalSpace(18),

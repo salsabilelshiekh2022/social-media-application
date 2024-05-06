@@ -1,7 +1,7 @@
 abstract class Routes {
   static const String onBoardingView = '/onBoardingView';
   static const String loginView = '/loginView';
-
+  static const String searchView = '/searchView';
   static const String homeView = '/homeView';
   static const String forgotPasswordView = '/forgotPasswordView';
   static const String splashView = '/splashView';

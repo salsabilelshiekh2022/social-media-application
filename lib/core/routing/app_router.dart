@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import '../../features/home/presentation/views/nav_bar.dart';
+
+import '../../features/forgot_password/presentation/views/create_new_password_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_method_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_otp_view.dart';
-import '../../features/home/presentation/views/home_view.dart';
+import '../../features/home/presentation/views/nav_bar.dart';
+import '../../features/login/presentation/views/login_page.dart';
 import '../../features/login/presentation/views/welcome_view.dart';
 import '../../features/onboarding/presentation/views/onboarding_view.dart';
 import '../../features/register/presentation/views/fill_your_profile_view.dart';
 import '../../features/register/presentation/views/register_view.dart';
 import '../../features/register/presentation/views/select_gender_view.dart';
-
-import '../../features/forgot_password/presentation/views/create_new_password_view.dart';
-import '../../features/login/presentation/views/login_page.dart';
+import '../../features/search/presentation/views/search_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 import 'routes.dart';
 
@@ -59,9 +59,9 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const CreateNewPasswordView(),
         );
-      case Routes.homeView:
+      case Routes.searchView:
         return MaterialPageRoute(
-          builder: (_) => const HomeView(),
+          builder: (_) => const SearchView(),
         );
       case Routes.navBar:
         return MaterialPageRoute(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:social_media_app/features/search/presentation/views/search_view.dart';
 import '../../../../core/theme/app_colors.dart';
 import 'home_view.dart';
 
@@ -22,7 +23,7 @@ class _NavBarViewState extends State<NavBarView> {
   List<Widget> _buildScreens() {
     return [
       const HomeView(),
-      Container(),
+      const SearchView(),
       Container(),
       Container(),
       Container(),
