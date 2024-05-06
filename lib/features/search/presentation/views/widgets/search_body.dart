@@ -16,7 +16,12 @@ class SearchBody extends StatelessWidget {
           padding: EdgeInsets.only(top: 15.h),
           child: const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [CustomSearchBar(), Expanded(child: TabViewBar())],
+            children: [
+              CustomSearchBar(),
+              Expanded(
+                child: TabViewBar(),
+              )
+            ],
           )),
     );
   }
