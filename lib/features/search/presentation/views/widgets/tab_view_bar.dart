@@ -1,10 +1,9 @@
 import 'package:dynamic_tabbar/dynamic_tabbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../home/presentation/views/widgets/post.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import 'for_you_content_body.dart';
+import 'posts_content_body.dart';
 import 'trends_content_body.dart';
 import 'users_content_body.dart';
 
@@ -44,7 +43,7 @@ class _TabViewBarState extends State<TabViewBar> {
       title: const Tab(
         child: Text('Posts'),
       ),
-      content: const Center(child: PostContentBody()),
+      content: const Center(child: PostsContentBody()),
     ),
     // Add more tabs as needed
   ];
@@ -62,24 +61,6 @@ class _TabViewBarState extends State<TabViewBar> {
         onAddTabMoveTo: MoveToTab.last,
         labelColor: AppColors.white,
       ),
-    );
-  }
-}
-
-class PostContentBody extends StatelessWidget {
-  const PostContentBody({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 16.h),
-      child: ListView.separated(
-          separatorBuilder: (context, index) => const Divider(),
-          itemCount: 20,
-          itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.only(left: 12.w),
-                child: const Post(),
-              )),
     );
   }
 }
