@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../features/add_post/presentation/views/add_post_view.dart';
 import '../../features/forgot_password/presentation/views/create_new_password_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_method_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_otp_view.dart';
@@ -66,6 +67,10 @@ class AppRouter {
       case Routes.navBar:
         return MaterialPageRoute(
           builder: (_) => const NavBarView(),
+        );
+      case Routes.addPostView:
+        return MaterialPageRoute(
+          builder: (_) => const AddPostView(),
         );
 
       default:
