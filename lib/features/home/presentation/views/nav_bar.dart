@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:social_media_app/features/chats/presentation/views/chats_view.dart';
-import 'package:social_media_app/features/search/presentation/views/search_view.dart';
+import '../../../chats/presentation/views/chats_view.dart';
+import '../../../profile/presentation/views/profile_view.dart';
+import '../../../search/presentation/views/search_view.dart';
 import '../../../../core/theme/app_colors.dart';
 import 'home_view.dart';
 
@@ -27,7 +28,7 @@ class _NavBarViewState extends State<NavBarView> {
       const SearchView(),
       Container(),
       const ChatsView(),
-      Container(),
+      const ProfileView(),
     ];
   }
 
