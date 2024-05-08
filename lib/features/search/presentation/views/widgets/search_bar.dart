@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../../../../../core/theme/app_colors.dart';
+import '../for_search_view.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key});
@@ -20,7 +22,14 @@ class CustomSearchBar extends StatelessWidget {
                 'https://i.pinimg.com/564x/e5/3b/f3/e53bf3d0aa612a5e36bbafdbbe2db074.jpg'),
           ),
           GestureDetector(
-              onTap: () {},
+              onTap: () {
+                PersistentNavBarNavigator.pushDynamicScreen(
+                  context,
+                  screen: MaterialPageRoute(
+                      builder: (context) => const ForSearchView()),
+                  withNavBar: false,
+                );
+              },
               child: Container(
                 width: 300.w,
                 height: 45.h,

@@ -11,6 +11,7 @@ import '../../features/onboarding/presentation/views/onboarding_view.dart';
 import '../../features/register/presentation/views/fill_your_profile_view.dart';
 import '../../features/register/presentation/views/register_view.dart';
 import '../../features/register/presentation/views/select_gender_view.dart';
+import '../../features/search/presentation/views/for_search_view.dart';
 import '../../features/search/presentation/views/search_view.dart';
 import '../../features/splash/presentation/views/splash_view.dart';
 import 'routes.dart';
@@ -71,6 +72,10 @@ class AppRouter {
       case Routes.addPostView:
         return MaterialPageRoute(
           builder: (_) => const AddPostView(),
+        );
+      case Routes.forSearchView:
+        return MaterialPageRoute(
+          builder: (_) => const ForSearchView(),
         );
 
       default:
