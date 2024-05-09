@@ -15,4 +15,5 @@ abstract class Routes {
   static const String createNewPasswordView = '/createNewPasswordView';
   static const String addPostView = '/addPostView';
   static const String forSearchView = '/forSearchView';
+  static const String chatView = '/chatView';
 }

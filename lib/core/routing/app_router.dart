@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../features/add_post/presentation/views/add_post_view.dart';
+import '../../features/chats/presentation/views/chat_view.dart';
 import '../../features/forgot_password/presentation/views/create_new_password_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_method_view.dart';
 import '../../features/forgot_password/presentation/views/forgot_password_otp_view.dart';
@@ -76,6 +77,10 @@ class AppRouter {
       case Routes.forSearchView:
         return MaterialPageRoute(
           builder: (_) => const ForSearchView(),
+        );
+      case Routes.chatView:
+        return MaterialPageRoute(
+          builder: (_) => const ChatView(),
         );
 
       default:
