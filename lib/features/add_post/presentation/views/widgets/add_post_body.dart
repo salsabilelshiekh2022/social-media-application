@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/spacing.dart';
 
 class AddPostBody extends StatelessWidget {
@@ -25,8 +26,7 @@ class AddPostBody extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 24.r,
-                  backgroundImage: const NetworkImage(
-                      'https://i.pinimg.com/564x/50/f9/fd/50f9fd233d898e8bf57b75fbedf15315.jpg'),
+                  backgroundImage: NetworkImage(AppConstants.userImage),
                 ),
                 horizontalSpace(12),
                 Expanded(

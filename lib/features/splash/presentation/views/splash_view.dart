@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:social_media_app/core/utils/extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../core/database/cache/cache_helper.dart';
+import '../../../../core/di/dependency_injection.dart';
 import '../../../../core/routing/routes.dart';
 import '../../../../core/utils/app_assets.dart';
 
@@ -16,7 +18,11 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      context.pushReplacementNamed(Routes.onBoardingView);
+      getIt<CacheHelper>().getData(key: 'userId') == null
+          ? context.pushReplacementNamed(Routes.onBoardingView)
+          : context.pushReplacementNamed(
+              Routes.navBar,
+            );
     });
     super.initState();
   }

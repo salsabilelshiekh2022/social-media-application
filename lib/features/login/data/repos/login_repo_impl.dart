@@ -24,6 +24,7 @@ class LoginRepoImpl implements LoginRepo {
     try {
       final userAuth = await auth.loginWithEmailAndPassword(email, password);
       getIt<CacheHelper>().cacheData(key: "userId", value: userAuth!.uid);
+      await _fireStore.cacheUserData();
       return right(userAuth);
     } on FirebaseException catch (e) {
       return left(LogInWithEmailAndPasswordFailure(e.toString()));
@@ -35,6 +36,7 @@ class LoginRepoImpl implements LoginRepo {
     try {
       final userAuth = await auth.signInWithFacebook();
       getIt<CacheHelper>().cacheData(key: "userId", value: userAuth!.uid);
+      await _fireStore.cacheUserData();
       await setUserData(userAuth);
       return right(userAuth);
     } on FirebaseException catch (e) {
@@ -47,6 +49,7 @@ class LoginRepoImpl implements LoginRepo {
     try {
       final userAuth = await auth.signInWithGoogle();
       getIt<CacheHelper>().cacheData(key: "userId", value: userAuth!.uid);
+      await _fireStore.cacheUserData();
       await setUserData(userAuth);
       return right(userAuth);
     } on FirebaseException catch (e) {

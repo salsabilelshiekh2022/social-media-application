@@ -1,5 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:social_media_app/core/di/dependency_injection.dart';
+
+import '../../../features/login/data/models/user_model.dart';
+import '../cache/cache_helper.dart';
 
 class FirestoreServices {
   FirestoreServices._();
@@ -98,5 +102,25 @@ class FirestoreServices {
       result.sort(sort);
     }
     return result;
+  }
+
+  Future<UserModel> cacheUserData() async {
+    final snapshot = await _fireStore
+        .collection('users')
+        .doc(getIt<CacheHelper>().getData(key: 'userId'))
+        .get();
+    final userData = UserModel.fromMap(snapshot.data()!);
+    getIt<CacheHelper>()
+        .cacheData(key: "profilePhoto", value: userData.profilePhoto);
+    getIt<CacheHelper>()
+        .cacheData(key: "coverPhoto", value: userData.coverPhoto);
+    getIt<CacheHelper>().cacheData(key: "fullName", value: userData.fullName);
+    getIt<CacheHelper>().cacheData(key: "fullName", value: userData.fullName);
+    getIt<CacheHelper>().cacheData(key: "nickName", value: userData.nickName);
+    getIt<CacheHelper>().cacheData(key: "email", value: userData.email);
+    getIt<CacheHelper>().cacheData(key: "bio", value: userData.bio);
+    getIt<CacheHelper>().cacheData(key: "phone", value: userData.phone);
+    getIt<CacheHelper>().cacheData(key: "address", value: userData.address);
+    return userData;
   }
 }

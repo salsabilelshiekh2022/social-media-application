@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../../core/utils/constants.dart';
 import '../../../../../core/utils/spacing.dart';
 
 class UserInfo extends StatelessWidget {
@@ -17,13 +18,13 @@ class UserInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Rana',
+            AppConstants.fullName,
             style: AppTextStyle.font24whiteBold.copyWith(
               fontSize: 28.sp,
             ),
           ),
           Text(
-            '@Cool_tazz',
+            '@${AppConstants.nickName}',
             style: AppTextStyle.font14Grey500Medium.copyWith(
               fontSize: 20.sp,
             ),

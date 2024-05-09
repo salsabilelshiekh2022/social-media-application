@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:social_media_app/core/utils/extensions.dart';
 import 'package:social_media_app/core/utils/snack_bar.dart';
 import 'package:social_media_app/features/login/presentation/cubit/login_cubit.dart';
 
+import '../../../../../core/routing/routes.dart';
 import '../../../../../core/utils/app_assets.dart';
 import '../../../../../core/utils/spacing.dart';
 import 'social_media_button.dart';
@@ -19,10 +21,14 @@ class SocialMediaLogin extends StatelessWidget {
           showSnackBar('Loading', Colors.green);
         } else if (state is SignInWithFaceBookFailureState) {
           showSnackBar(state.message, Colors.red);
-          print(state.message);
         } else if (state is SignInWithFaceBookSuccessState ||
             state is SignInWithGoogleSuccessState) {
           showSnackBar('Success', Colors.green);
+
+          context.pushNamedAndRemoveUntil(
+            Routes.navBar,
+            predicate: (route) => false,
+          );
         }
       },
       builder: (context, state) {

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
+import '../../../../../core/utils/constants.dart';
 
 class UserImageAndCover extends StatelessWidget {
   const UserImageAndCover({super.key});
@@ -31,8 +32,7 @@ class UserImageAndCover extends StatelessWidget {
                     radius: 52.r,
                     child: CircleAvatar(
                       radius: 48.r,
-                      backgroundImage: const NetworkImage(
-                          'https://i.pinimg.com/564x/50/f9/fd/50f9fd233d898e8bf57b75fbedf15315.jpg'),
+                      backgroundImage: NetworkImage(AppConstants.userImage),
                     ),
                   ),
                   Padding(

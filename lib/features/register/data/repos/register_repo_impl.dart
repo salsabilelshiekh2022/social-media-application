@@ -49,7 +49,7 @@ class RegisterRepoImpl implements RegisterRepo {
     String? nickName,
     String? address,
   }) async {
-    _fireStore.updateData(
+    await _fireStore.updateData(
       path: ApiPath.user(getIt<CacheHelper>().getData(key: "userId")),
       data: {
         "fullName": fullName ?? '',
@@ -62,5 +62,7 @@ class RegisterRepoImpl implements RegisterRepo {
         'address': address ?? '',
       },
     );
+
+    await _fireStore.cacheUserData();
   }
 }
