@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_media_app/features/add_post/presentation/cubit/add_post_cubit.dart';
@@ -38,12 +36,14 @@ class AddPostBody extends StatelessWidget {
                         backgroundImage: NetworkImage(AppConstants.userImage),
                       ),
                       horizontalSpace(12),
-                      const Expanded(
-                          child: TextField(
-                        enabled: true,
+                      Expanded(
+                          child: TextFormField(
+                        onChanged: (value) {
+                          cubit.postText = value;
+                        },
                         autofocus: true,
                         cursorColor: AppColors.mainColor,
-                        decoration: InputDecoration.collapsed(
+                        decoration: const InputDecoration.collapsed(
                           hintText: 'What\'s on your mind?',
                           hintStyle: TextStyle(color: AppColors.grey500),
                           border: InputBorder.none,

@@ -15,6 +15,7 @@ class AddPostCubit extends Cubit<AddPostState> {
   String imgUrl = '';
 
   File? postImg;
+  String? postText;
   getImageFromGallery() async {
     emit(PickImageLoadingState());
     final pickedImage =
