@@ -38,6 +38,8 @@ class PostModel {
       'postImage': postImage,
       'dateTime': dateTime,
       'postText': postText,
+      'userId': userId,
+      'id': id
     };
   }
 }
