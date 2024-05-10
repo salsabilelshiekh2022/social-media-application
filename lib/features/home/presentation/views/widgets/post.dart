@@ -22,7 +22,9 @@ class Post extends StatelessWidget {
         ),
         horizontalSpace(8),
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          HeaderOfPost(post: post),
+          SizedBox(
+              width: MediaQuery.of(context).size.width - 78.h,
+              child: HeaderOfPost(post: post)),
           verticalSpace(4),
           PostBody(
             post: post,

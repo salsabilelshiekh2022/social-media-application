@@ -22,7 +22,8 @@ class PostsContentBody extends StatelessWidget {
                       dateTime: '20 h',
                       fullName: 'Rana',
                       nickName: 'Cool_tazz',
-                      postImage: '',
+                      postImage:
+                          'https://i.pinimg.com/736x/11/e8/56/11e8565c7eeb66d8be5c741762623da8.jpg',
                       postText:
                           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
                       profilePhoto:

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:social_media_app/features/add_post/data/models/post_model.dart';
 
@@ -13,17 +15,21 @@ class HeaderOfPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          post.fullName ?? '',
-          style: AppTextStyle.font18WhiteBold,
+        Row(
+          children: [
+            Text(
+              post.fullName ?? '',
+              style: AppTextStyle.font18WhiteBold,
+            ),
+            horizontalSpace(4),
+            Text(
+              '@${post.nickName} . 20h',
+              style: AppTextStyle.font16Grey500Regular,
+            ),
+          ],
         ),
-        horizontalSpace(4),
-        Text(
-          '@${post.nickName} . 20h',
-          style: AppTextStyle.font16Grey500Regular,
-        ),
-        horizontalSpace(155),
         const Icon(
           FontAwesomeIcons.ellipsisVertical,
           color: AppColors.grey500,
