@@ -21,6 +21,15 @@ class FirestoreServices {
     await reference.set(data);
   }
 
+  Future<void> addData({
+    required String path,
+    required Map<String, dynamic> data,
+  }) async {
+    final reference = _fireStore.collection(path);
+    debugPrint('Request Data: $data');
+    await reference.add(data);
+  }
+
   Future<void> updateData({
     required String path,
     required Map<String, dynamic> data,

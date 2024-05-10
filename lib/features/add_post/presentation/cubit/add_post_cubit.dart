@@ -4,11 +4,13 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:social_media_app/features/add_post/data/repos/add_post_repo.dart';
 
 part 'add_post_state.dart';
 
 class AddPostCubit extends Cubit<AddPostState> {
-  AddPostCubit() : super(AddPostInitial());
+  AddPostCubit({required this.addPostRepo}) : super(AddPostInitial());
+  final AddPostRepo addPostRepo;
 
   final storage = FirebaseStorage.instance;
 
@@ -52,6 +54,17 @@ class AddPostCubit extends Cubit<AddPostState> {
           .child("postsImages/${Uri(path: postImg!.path).pathSegments.last}")
           .putFile(postImg!);
       imgUrl = await ref.ref.getDownloadURL();
+    }
+  }
+
+  Future<void> uploadPost({String? text, String? image}) async {
+    emit(UploadPostLoadingState());
+    try {
+      await uploadImage();
+      await addPostRepo.uploadPost(text: postText, image: imgUrl);
+      emit(UploadPostSuccessState());
+    } catch (e) {
+      emit(UploadPostFailureState(message: e.toString()));
     }
   }
 }

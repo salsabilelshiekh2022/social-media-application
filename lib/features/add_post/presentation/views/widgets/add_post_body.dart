@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:social_media_app/core/utils/extensions.dart';
 import 'package:social_media_app/features/add_post/presentation/cubit/add_post_cubit.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 import '../../../../../core/utils/constants.dart';
+import '../../../../../core/utils/snack_bar.dart';
 import '../../../../../core/utils/spacing.dart';
 
 class AddPostBody extends StatelessWidget {
@@ -21,7 +23,14 @@ class AddPostBody extends StatelessWidget {
           top: 16.h,
           bottom: 24.h,
         ),
-        child: BlocBuilder<AddPostCubit, AddPostState>(
+        child: BlocConsumer<AddPostCubit, AddPostState>(
+          listener: (context, state) {
+            if (state is UploadPostSuccessState) {
+              context.pop();
+            } else if (state is UploadPostFailureState) {
+              showSnackBar(state.message, Colors.red);
+            }
+          },
           builder: (context, state) {
             final cubit = context.read<AddPostCubit>();
             return Column(
@@ -127,11 +136,16 @@ class AddPostBody extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12.r),
                               ),
                             ),
-                            onPressed: () {},
-                            child: Text(
-                              'Post',
-                              style: AppTextStyle.font16whiteSemiBold,
-                            )),
+                            onPressed: () {
+                              cubit.uploadPost();
+                            },
+                            child: state is UploadPostLoadingState
+                                ? const CircularProgressIndicator(
+                                    color: AppColors.white)
+                                : Text(
+                                    'Post',
+                                    style: AppTextStyle.font16whiteSemiBold,
+                                  )),
                       ],
                     )),
               ],

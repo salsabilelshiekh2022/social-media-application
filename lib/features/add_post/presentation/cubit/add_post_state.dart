@@ -20,3 +20,13 @@ final class PickImageFailureState extends AddPostState {
 }
 
 final class RemoveImageState extends AddPostState {}
+
+final class UploadPostLoadingState extends AddPostState {}
+
+final class UploadPostSuccessState extends AddPostState {}
+
+final class UploadPostFailureState extends AddPostState {
+  final String message;
+
+  const UploadPostFailureState({required this.message});
+}

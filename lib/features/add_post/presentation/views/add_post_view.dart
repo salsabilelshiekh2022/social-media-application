@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:social_media_app/features/add_post/data/repos/add_post_repo_impl.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/extensions.dart';
 
@@ -26,7 +27,7 @@ class AddPostView extends StatelessWidget {
         ),
       ),
       body: BlocProvider(
-        create: (context) => AddPostCubit(),
+        create: (context) => AddPostCubit(addPostRepo: AddPostRepoImpl()),
         child: const AddPostBody(),
       ),
     );

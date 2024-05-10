@@ -1,4 +1,6 @@
 class PostModel {
+  String? id;
+  String? userId;
   String? fullName;
   String? nickName;
   String? profilePhoto;
@@ -7,7 +9,9 @@ class PostModel {
   String? dateTime;
 
   PostModel(
-      {this.fullName,
+      {this.id,
+      this.userId,
+      this.fullName,
       this.nickName,
       this.dateTime,
       this.postImage,
@@ -16,6 +20,8 @@ class PostModel {
 
   factory PostModel.fromMap(Map<String, dynamic> json) {
     return PostModel(
+        id: json['id'],
+        userId: json['userId'],
         fullName: json['fullName'],
         nickName: json['nickName'],
         profilePhoto: json['profilePhoto'],

@@ -10,4 +10,5 @@ abstract class AppConstants {
   static String address = getIt<CacheHelper>().getData(key: 'address');
   static String bio = getIt<CacheHelper>().getData(key: 'bio');
   static String coverPhoto = getIt<CacheHelper>().getData(key: 'coverPhoto');
+  static String userId = getIt<CacheHelper>().getData(key: 'userId');
 }
