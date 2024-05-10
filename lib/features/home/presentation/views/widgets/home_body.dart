@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/utils/spacing.dart';
+import '../../../../add_post/data/models/post_model.dart';
+import '../../cubit/home_cubit.dart';
 import 'home_app_bar.dart';
 import 'post.dart';
 
@@ -19,17 +22,40 @@ class HomeBody extends StatelessWidget {
             const HomeAppBar(),
             const Divider(),
             verticalSpace(18),
-            ListView.separated(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w),
-                    child: const Post(),
-                  );
-                },
-                separatorBuilder: (context, index) => const Divider(),
-                itemCount: 5)
+            BlocBuilder<HomeCubit, HomeState>(
+              builder: (context, state) {
+                final cubit = BlocProvider.of<HomeCubit>(context);
+                return StreamBuilder<List<PostModel>>(
+                  stream: cubit.getPosts(),
+                  builder: ((context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.active) {
+                      final posts = snapshot.data;
+                      if (posts == null || posts.isEmpty) {
+                        return const Center(
+                          child: Text('No Data Available!'),
+                        );
+                      }
+                      return ListView.separated(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 12.w),
+                              child: Post(
+                                post: posts[index],
+                              ),
+                            );
+                          },
+                          separatorBuilder: (context, index) => const Divider(),
+                          itemCount: posts.length);
+                    }
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }),
+                );
+              },
+            )
           ],
         ),
       )),

@@ -3,38 +3,40 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/detect_language.dart';
 import '../../../../../core/utils/spacing.dart';
+import '../../../../add_post/data/models/post_model.dart';
 
 class PostBody extends StatelessWidget {
-  PostBody({super.key});
+  const PostBody({super.key, required this.post});
+  final PostModel post;
 
-  final String text1 =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ';
-  final bool isArabic = detectLanguage(
-          string:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ') ==
-      'ar';
   @override
   Widget build(BuildContext context) {
+    final bool isArabic = detectLanguage(string: post.postText ?? '') == 'ar';
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          width: 338.w,
-          child: Text(
-            text1,
-            textDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
-          ),
-        ),
+        post.postText == null
+            ? const SizedBox()
+            : SizedBox(
+                width: 338.w,
+                child: Text(
+                  post.postText ?? '',
+                  textDirection:
+                      isArabic ? TextDirection.rtl : TextDirection.ltr,
+                ),
+              ),
         verticalSpace(4),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(12.r),
-          child: Image.network(
-            'https://i.pinimg.com/736x/11/e8/56/11e8565c7eeb66d8be5c741762623da8.jpg',
-            width: 348.w,
-            height: 320.h,
-            fit: BoxFit.cover,
-          ),
-        ),
+        post.postImage == ''
+            ? const SizedBox()
+            : ClipRRect(
+                borderRadius: BorderRadius.circular(12.r),
+                child: Image.network(
+                  post.postImage ?? '',
+                  width: 348.w,
+                  height: 320.h,
+                  fit: BoxFit.cover,
+                ),
+              ),
       ],
     );
   }
