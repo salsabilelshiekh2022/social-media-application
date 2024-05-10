@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/extensions.dart';
 
+import '../cubit/add_post_cubit.dart';
 import 'widgets/add_post_body.dart';
 
 class AddPostView extends StatelessWidget {
@@ -23,7 +25,10 @@ class AddPostView extends StatelessWidget {
           color: AppColors.white,
         ),
       ),
-      body: const AddPostBody(),
+      body: BlocProvider(
+        create: (context) => AddPostCubit(),
+        child: const AddPostBody(),
+      ),
     );
   }
 }
