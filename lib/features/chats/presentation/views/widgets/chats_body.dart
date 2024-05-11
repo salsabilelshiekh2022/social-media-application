@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:social_media_app/features/chats/presentation/cubit/chats_cubit.dart';
 import 'chat_item.dart';
 
 import '../../../../../core/utils/spacing.dart';
@@ -20,13 +22,29 @@ class ChatsBody extends StatelessWidget {
               const ChatsAppBar(),
               const Divider(),
               verticalSpace(18),
-              ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: 6,
-                  itemBuilder: (context, index) {
-                    return const ChatItem();
-                  })
+              BlocBuilder<ChatsCubit, ChatsState>(
+                builder: (context, state) {
+                  if (state is GetAllUsersLoadingState) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  } else if (state is GetAllUsersSuccessState) {
+                    return ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: state.users.length,
+                        itemBuilder: (context, index) {
+                          return ChatItem(
+                            user: state.users[index],
+                          );
+                        });
+                  } else {
+                    return const Center(
+                      child: Text('No Data Available!'),
+                    );
+                  }
+                },
+              )
             ],
           ),
         ),

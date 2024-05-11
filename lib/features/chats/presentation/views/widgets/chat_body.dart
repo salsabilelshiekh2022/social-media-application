@@ -21,6 +21,7 @@ class ChatBody extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                  physics: const BouncingScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (context, indedx) {
                     return const Padding(

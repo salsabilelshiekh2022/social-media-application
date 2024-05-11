@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app/features/login/data/models/user_model.dart';
 
 import '../../features/add_post/presentation/views/add_post_view.dart';
 import '../../features/chats/presentation/views/chat_view.dart';
@@ -79,8 +80,12 @@ class AppRouter {
           builder: (_) => const ForSearchView(),
         );
       case Routes.chatView:
+        final args = settings.arguments as Map<String, dynamic>;
+        final user = args['user'] as UserModel;
         return MaterialPageRoute(
-          builder: (_) => const ChatView(),
+          builder: (_) => ChatView(
+            user: user,
+          ),
         );
 
       default:

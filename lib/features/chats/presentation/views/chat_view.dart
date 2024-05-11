@@ -5,10 +5,13 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../core/utils/spacing.dart';
+import '../../../login/data/models/user_model.dart';
 import 'widgets/chat_body.dart';
 
 class ChatView extends StatelessWidget {
-  const ChatView({super.key});
+  const ChatView({super.key, required this.user});
+
+  final UserModel user;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +32,12 @@ class ChatView extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 20.r,
-              backgroundImage: const NetworkImage(
-                  'https://i.pinimg.com/564x/e5/3b/f3/e53bf3d0aa612a5e36bbafdbbe2db074.jpg'),
+              backgroundImage: NetworkImage(
+                  user.profilePhoto ?? 'https://i.pravatar.cc/300'),
             ),
             horizontalSpace(16),
             Text(
-              'روان',
+              user.fullName!,
               style: AppTextStyle.font18WhiteBold,
             ),
           ],
