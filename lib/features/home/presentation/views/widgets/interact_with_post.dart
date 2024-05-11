@@ -54,10 +54,20 @@ class InteractWithPost extends StatelessWidget {
                     : AppColors.grey500,
               ),
               SpecialIconButton(
-                  onPressed: () {},
-                  icon: Icons.bookmark_outline_rounded,
+                  onPressed: () {
+                    if (post.bookMarks!.contains(AppConstants.userId)) {
+                      cubit.unSavePost(postId: post.id!);
+                    } else {
+                      cubit.savePost(postId: post.id!);
+                    }
+                  },
+                  icon: post.bookMarks!.contains(AppConstants.userId)
+                      ? Icons.bookmark
+                      : Icons.bookmark_outline_rounded,
                   size: 20.sp,
-                  color: AppColors.grey500),
+                  color: post.bookMarks!.contains(AppConstants.userId)
+                      ? AppColors.blue
+                      : AppColors.grey500),
               SpecialIconButton(
                   onPressed: () {},
                   icon: Icons.share_rounded,

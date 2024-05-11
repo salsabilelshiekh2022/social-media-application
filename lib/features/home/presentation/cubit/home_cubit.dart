@@ -28,11 +28,27 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
+  Future<void> savePost({required String postId}) async {
+    try {
+      await homeRepo.savePost(postId);
+    } catch (e) {
+      emit(SavePostErrorState());
+    }
+  }
+
   Future<void> dislikePost({required String postId}) async {
     try {
       await homeRepo.dislikePost(postId);
     } catch (e) {
       emit(DislikePostErrorState());
+    }
+  }
+
+  Future<void> unSavePost({required String postId}) async {
+    try {
+      await homeRepo.unSavePost(postId);
+    } catch (e) {
+      emit(UnSavePostErrorState());
     }
   }
 }

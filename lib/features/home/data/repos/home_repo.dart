@@ -6,4 +6,8 @@ abstract class HomeRepo {
   Future<void> likePost(String postId);
 
   Future<void> dislikePost(String postId);
+
+  Future<void> savePost(String postId);
+
+  Future<void> unSavePost(String postId);
 }

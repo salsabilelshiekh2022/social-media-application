@@ -24,6 +24,7 @@ class AddPostRepoImpl implements AddPostRepo {
               comments: [],
               likes: [],
               shares: [],
+              bookMarks: [],
               postText: text)
           .toMap(),
     );

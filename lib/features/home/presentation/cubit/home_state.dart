@@ -21,4 +21,8 @@ final class GetPostsErrorState extends HomeState {}
 
 final class LikePostErrorState extends HomeState {}
 
+final class SavePostErrorState extends HomeState {}
+
 final class DislikePostErrorState extends HomeState {}
+
+final class UnSavePostErrorState extends HomeState {}

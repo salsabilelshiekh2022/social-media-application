@@ -12,20 +12,21 @@ class PostModel {
   List? likes = [];
   List? comments = [];
   List? shares = [];
+  List? bookMarks = [];
 
-  PostModel({
-    this.id,
-    this.userId,
-    this.fullName,
-    this.nickName,
-    this.dateTime,
-    this.postImage,
-    this.postText,
-    this.profilePhoto,
-    this.likes,
-    this.comments,
-    this.shares,
-  });
+  PostModel(
+      {this.id,
+      this.userId,
+      this.fullName,
+      this.nickName,
+      this.dateTime,
+      this.postImage,
+      this.postText,
+      this.profilePhoto,
+      this.likes,
+      this.comments,
+      this.shares,
+      this.bookMarks});
 
   factory PostModel.fromMap(Map<String, dynamic> json) {
     return PostModel(
@@ -39,7 +40,8 @@ class PostModel {
         postText: json['postText'],
         likes: json['likes'],
         comments: json['comments'],
-        shares: json['shares']);
+        shares: json['shares'],
+        bookMarks: json['bookMarks']);
   }
 
   Map<String, dynamic> toMap() {
@@ -54,7 +56,8 @@ class PostModel {
       'id': id,
       'likes': likes,
       'comments': comments,
-      'shares': shares
+      'shares': shares,
+      'bookMarks': bookMarks
     };
   }
 }
