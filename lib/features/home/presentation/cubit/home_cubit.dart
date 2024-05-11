@@ -11,13 +11,28 @@ class HomeCubit extends Cubit<HomeState> {
 
   Stream<List<PostModel>> getPosts() {
     try {
-      emit(GetPostsLoadingState());
       final posts = homeRepo.getPosts();
       emit(GetPostsSuccessState(posts: posts));
       return posts;
     } catch (e) {
       emit(GetPostsErrorState());
-      rethrow;
+      return const Stream.empty();
+    }
+  }
+
+  Future<void> likePost({required String postId}) async {
+    try {
+      await homeRepo.likePost(postId);
+    } catch (e) {
+      emit(LikePostErrorState());
+    }
+  }
+
+  Future<void> dislikePost({required String postId}) async {
+    try {
+      await homeRepo.dislikePost(postId);
+    } catch (e) {
+      emit(DislikePostErrorState());
     }
   }
 }

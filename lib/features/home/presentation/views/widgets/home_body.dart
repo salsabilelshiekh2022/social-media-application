@@ -14,6 +14,7 @@ class HomeBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
           child: Padding(
         padding: EdgeInsets.only(top: 15.h, bottom: 50.h),
         child: Column(
@@ -22,13 +23,12 @@ class HomeBody extends StatelessWidget {
             const HomeAppBar(),
             const Divider(),
             verticalSpace(18),
-            BlocBuilder<HomeCubit, HomeState>(
-              builder: (context, state) {
-                final cubit = BlocProvider.of<HomeCubit>(context);
-                return StreamBuilder<List<PostModel>>(
-                  stream: cubit.getPosts(),
+           StreamBuilder<List<PostModel?>>(
+                 
+                  stream: context.read<HomeCubit>().getPosts(),
                   builder: ((context, snapshot) {
-                    if (snapshot.connectionState == ConnectionState.active) {
+                    if (snapshot.connectionState ==
+                            ConnectionState.active) {
                       final posts = snapshot.data;
                       if (posts == null || posts.isEmpty) {
                         return const Center(
@@ -42,19 +42,19 @@ class HomeBody extends StatelessWidget {
                             return Padding(
                               padding: EdgeInsets.symmetric(horizontal: 12.w),
                               child: Post(
-                                post: posts[index],
+                                post: posts[index]!,
                               ),
                             );
                           },
                           separatorBuilder: (context, index) => const Divider(),
                           itemCount: posts.length);
                     }
+
                     return const Center(
                       child: CircularProgressIndicator(),
                     );
                   }),
-                );
-              },
+               
             )
           ],
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:social_media_app/core/routing/routes.dart';
 import 'package:social_media_app/core/utils/extensions.dart';

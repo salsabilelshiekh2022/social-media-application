@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class PostModel {
   String? id;
   String? userId;
@@ -6,17 +8,24 @@ class PostModel {
   String? profilePhoto;
   String? postText;
   String? postImage;
-  String? dateTime;
+  String? dateTime = Timestamp.now().toDate().toString();
+  List? likes = [];
+  List? comments = [];
+  List? shares = [];
 
-  PostModel(
-      {this.id,
-      this.userId,
-      this.fullName,
-      this.nickName,
-      this.dateTime,
-      this.postImage,
-      this.postText,
-      this.profilePhoto});
+  PostModel({
+    this.id,
+    this.userId,
+    this.fullName,
+    this.nickName,
+    this.dateTime,
+    this.postImage,
+    this.postText,
+    this.profilePhoto,
+    this.likes,
+    this.comments,
+    this.shares,
+  });
 
   factory PostModel.fromMap(Map<String, dynamic> json) {
     return PostModel(
@@ -27,7 +36,10 @@ class PostModel {
         profilePhoto: json['profilePhoto'],
         postImage: json['postImage'],
         dateTime: json['dateTime'],
-        postText: json['postText']);
+        postText: json['postText'],
+        likes: json['likes'],
+        comments: json['comments'],
+        shares: json['shares']);
   }
 
   Map<String, dynamic> toMap() {
@@ -39,7 +51,10 @@ class PostModel {
       'dateTime': dateTime,
       'postText': postText,
       'userId': userId,
-      'id': id
+      'id': id,
+      'likes': likes,
+      'comments': comments,
+      'shares': shares
     };
   }
 }

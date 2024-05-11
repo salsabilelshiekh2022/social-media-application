@@ -18,3 +18,7 @@ final class GetPostsSuccessState extends HomeState {
 }
 
 final class GetPostsErrorState extends HomeState {}
+
+final class LikePostErrorState extends HomeState {}
+
+final class DislikePostErrorState extends HomeState {}

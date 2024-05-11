@@ -10,11 +10,15 @@ class SpecialIconButton extends StatelessWidget {
       required this.onPressed,
       required this.icon,
       this.size = 16,
-      this.text = ''});
+      this.text = '',
+      required this.color,
+      this.textColor = AppColors.grey500});
   final void Function()? onPressed;
   final IconData icon;
+  final Color color;
   final double size;
   final String text;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +28,12 @@ class SpecialIconButton extends StatelessWidget {
           onTap: onPressed,
           child: Icon(
             icon,
-            color: AppColors.grey500,
+            color: color,
             size: size,
           ),
         ),
         horizontalSpace(3),
-        Text(text, style: TextStyle(color: AppColors.grey500, fontSize: 14.sp)),
+        Text(text, style: TextStyle(color: textColor, fontSize: 14.sp)),
       ],
     );
   }

@@ -20,32 +20,15 @@ class AddPostRepoImpl implements AddPostRepo {
               profilePhoto: AppConstants.userImage,
               userId: AppConstants.userId,
               postImage: image,
-              dateTime: DateTime.now().toString(),
+              dateTime: Timestamp.now().toDate().toString(),
+              comments: [],
+              likes: [],
+              shares: [],
               postText: text)
           .toMap(),
     );
 
     await _fireStore.updateData(
         path: '${ApiPath.posts}/${postRef.id}', data: {'id': postRef.id});
-
-    await uploadPostInUserPosts(text: text, image: image, id: postRef.id);
-  }
-
-  @override
-  Future<void> uploadPostInUserPosts(
-      {String? text, String? image, String? id}) async {
-    await _fireStore.addData(
-      path: ApiPath.userPost(AppConstants.userId),
-      data: PostModel(
-              fullName: AppConstants.fullName,
-              nickName: AppConstants.nickName,
-              profilePhoto: AppConstants.userImage,
-              postImage: image,
-              dateTime: DateTime.now().toString(),
-              postText: text,
-              userId: AppConstants.userId,
-              id: id)
-          .toMap(),
-    );
   }
 }

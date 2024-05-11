@@ -30,7 +30,9 @@ class Post extends StatelessWidget {
             post: post,
           ),
           verticalSpace(8),
-          const InteractWithPost()
+          InteractWithPost(
+            post: post,
+          )
         ]),
       ],
     );

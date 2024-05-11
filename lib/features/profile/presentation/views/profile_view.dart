@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/spacing.dart';
-import '../../../search/presentation/views/widgets/posts_content_body.dart';
 import 'widgets/user_image_and_cover.dart';
 import 'widgets/user_info.dart';
 
@@ -71,7 +70,7 @@ class _ProfileViewState extends State<ProfileView>
                     controller: _tabController,
                     children: const <Widget>[
                       Center(
-                        child: PostsContentBody(),
+                        child: Text("It's rainy here"),
                       ),
                       Center(
                         child: Text("It's rainy here"),
