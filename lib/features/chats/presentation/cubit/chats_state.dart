@@ -20,3 +20,19 @@ final class GetAllUsersErrorState extends ChatsState {
   final String message;
   const GetAllUsersErrorState({required this.message});
 }
+
+final class SendMessageSuccessState extends ChatsState {}
+
+final class SendMessageErrorState extends ChatsState {
+  final String message;
+  const SendMessageErrorState({required this.message});
+}
+
+final class SendMessageLoadingState extends ChatsState {}
+
+final class GetAllMessagesSuccessState extends ChatsState {}
+
+final class GetAllMessagesErrorState extends ChatsState {
+  final String message;
+  const GetAllMessagesErrorState({required this.message});
+}

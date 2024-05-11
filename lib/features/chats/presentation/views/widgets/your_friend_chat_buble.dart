@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:social_media_app/features/chats/data/models/message_model.dart';
 
 import '../../../../../core/theme/app_colors.dart';
 import '../../../../../core/theme/app_text_styles.dart';
 
 class YourFriendChatBubble extends StatelessWidget {
-  const YourFriendChatBubble({super.key});
+  const YourFriendChatBubble({super.key, required this.message});
+  final MessageModel message;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,7 @@ class YourFriendChatBubble extends StatelessWidget {
               bottomLeft: Radius.circular(4.r),
               bottomRight: Radius.circular(24.r)),
         ),
-        child:
-            Text('How are you doing? ', style: AppTextStyle.font18whiteMedium),
+        child: Text(message.text!, style: AppTextStyle.font18whiteMedium),
       ),
     );
   }

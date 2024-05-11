@@ -13,37 +13,40 @@ class OnboardingBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: SizedBox(
-          width: double.infinity,
-          height: 926.h,
-          child: PageView.builder(
-              physics: const BouncingScrollPhysics(),
-              controller: controller,
-              itemCount: onBoardingDummyData(context).length,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    verticalSpace(64),
-                    Image.asset(
-                      onBoardingDummyData(context)[index].image,
-                      width: 300.w,
-                      height: 340.h,
-                    ),
-                    verticalSpace(80),
-                    Text(
-                      textAlign: TextAlign.center,
-                      onBoardingDummyData(context)[index].title,
-                      style: AppTextStyle.font40whiteBold,
-                    ),
-                    PageIndicatorAndOnboardingButton(
-                      controller: controller,
-                      index: index,
-                    )
-                  ],
-                );
-              }),
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: SizedBox(
+            width: double.infinity,
+            height: 926.h,
+            child: PageView.builder(
+                physics: const BouncingScrollPhysics(),
+                controller: controller,
+                itemCount: onBoardingDummyData(context).length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      verticalSpace(64),
+                      Image.asset(
+                        onBoardingDummyData(context)[index].image,
+                        width: 300.w,
+                        height: 340.h,
+                      ),
+                      verticalSpace(80),
+                      Text(
+                        textAlign: TextAlign.center,
+                        onBoardingDummyData(context)[index].title,
+                        style: AppTextStyle.font40whiteBold,
+                      ),
+                      PageIndicatorAndOnboardingButton(
+                        controller: controller,
+                        index: index,
+                      )
+                    ],
+                  );
+                }),
+          ),
         ),
       ),
     );

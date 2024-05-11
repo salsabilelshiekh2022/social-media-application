@@ -4,14 +4,14 @@ class MessageModel {
   final String senderId;
   final String receiverId;
   final String? text;
-  DateTime dateTime = Timestamp.now().toDate();
+  String? dateTime = Timestamp.now().toDate().toString();
   String? file;
 
   MessageModel({
     required this.senderId,
     required this.receiverId,
     this.text,
-    required this.dateTime,
+    this.dateTime,
     this.file,
   });
 

@@ -21,7 +21,7 @@ class _SplashPageState extends State<SplashPage> {
       getIt<CacheHelper>().getData(key: 'userId') == null
           ? context.pushReplacementNamed(Routes.onBoardingView)
           : context.pushReplacementNamed(
-              Routes.navBar,
+              Routes.loginView,
             );
     });
     super.initState();
