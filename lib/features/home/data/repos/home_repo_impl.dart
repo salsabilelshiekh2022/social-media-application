@@ -44,4 +44,18 @@ class HomeRepoImpl implements HomeRepo {
       'bookMarks': FieldValue.arrayRemove([AppConstants.userId])
     });
   }
+
+  @override
+  Future<void> repostPost(String postId) async {
+    await _fireStore.updateData(path: '${ApiPath.posts}/$postId', data: {
+      'shares': FieldValue.arrayUnion([AppConstants.userId])
+    });
+  }
+
+  @override
+  Future<void> unRepostPost(String postId) async {
+    await _fireStore.updateData(path: '${ApiPath.posts}/$postId', data: {
+      'shares': FieldValue.arrayRemove([AppConstants.userId])
+    });
+  }
 }

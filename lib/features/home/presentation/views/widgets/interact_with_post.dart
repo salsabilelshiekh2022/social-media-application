@@ -29,10 +29,23 @@ class InteractWithPost extends StatelessWidget {
                   text: '10',
                   color: AppColors.grey500),
               SpecialIconButton(
-                  onPressed: () {},
-                  icon: FontAwesomeIcons.retweet,
-                  text: ' 20',
-                  color: AppColors.grey500),
+                onPressed: () {
+                  if (post.shares!.contains(AppConstants.userId)) {
+                    cubit.unRepostPost(postId: post.id!);
+                  } else {
+                    cubit.repostPost(postId: post.id!);
+                  }
+                },
+                icon: FontAwesomeIcons.retweet,
+                text:
+                    post.shares!.isEmpty ? '' : post.shares!.length.toString(),
+                textColor: post.shares!.contains(AppConstants.userId)
+                    ? AppColors.green
+                    : AppColors.grey500,
+                color: post.shares!.contains(AppConstants.userId)
+                    ? AppColors.green
+                    : AppColors.grey500,
+              ),
               SpecialIconButton(
                 onPressed: () {
                   if (post.likes!.contains(AppConstants.userId)) {
@@ -45,7 +58,7 @@ class InteractWithPost extends StatelessWidget {
                     ? Icons.favorite_rounded
                     : Icons.favorite_border_rounded,
                 size: 20.sp,
-                text: post.likes!.length.toString(),
+                text: post.likes!.isEmpty ? '' : post.likes!.length.toString(),
                 textColor: post.likes!.contains(AppConstants.userId)
                     ? AppColors.pink
                     : AppColors.grey500,

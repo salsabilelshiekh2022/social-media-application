@@ -23,6 +23,10 @@ final class LikePostErrorState extends HomeState {}
 
 final class SavePostErrorState extends HomeState {}
 
+final class RepostPostErrorState extends HomeState {}
+
 final class DislikePostErrorState extends HomeState {}
 
 final class UnSavePostErrorState extends HomeState {}
+
+final class UnRepostPostErrorState extends HomeState {}

@@ -36,6 +36,14 @@ class HomeCubit extends Cubit<HomeState> {
     }
   }
 
+  Future<void> repostPost({required String postId}) async {
+    try {
+      await homeRepo.repostPost(postId);
+    } catch (e) {
+      emit(RepostPostErrorState());
+    }
+  }
+
   Future<void> dislikePost({required String postId}) async {
     try {
       await homeRepo.dislikePost(postId);
@@ -49,6 +57,14 @@ class HomeCubit extends Cubit<HomeState> {
       await homeRepo.unSavePost(postId);
     } catch (e) {
       emit(UnSavePostErrorState());
+    }
+  }
+
+  Future<void> unRepostPost({required String postId}) async {
+    try {
+      await homeRepo.unRepostPost(postId);
+    } catch (e) {
+      emit(UnRepostPostErrorState());
     }
   }
 }

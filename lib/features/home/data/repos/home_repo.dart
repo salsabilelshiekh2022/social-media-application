@@ -10,4 +10,8 @@ abstract class HomeRepo {
   Future<void> savePost(String postId);
 
   Future<void> unSavePost(String postId);
+
+  Future<void> repostPost(String postId);
+
+  Future<void> unRepostPost(String postId);
 }
