@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:social_media_app/core/theme/app_colors.dart';
 import 'package:social_media_app/core/utils/extensions.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/database/cache/cache_helper.dart';
@@ -35,6 +36,8 @@ class _SplashPageState extends State<SplashPage> {
           AppAssets.logo,
           height: 128.h,
           width: 160.w,
+          colorFilter:
+              const ColorFilter.mode(AppColors.mainColor, BlendMode.srcIn),
         ),
       ),
     );
