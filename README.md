@@ -45,4 +45,3 @@
 | <img src="screen_shots/13.jpg" width="400">     | <img src="screen_shots/14.jpg" width="400"> |
 | <img src="screen_shots/15.jpg" width="400">     | <img src="screen_shots/16.jpg" width="400"> |
 | <img src="screen_shots/17.jpg" width="400">     | <img src="screen_shots/18.jpg" width="400"> |
-| <img src="screen_shots/19.jpg" width="400">     | <img src="screen_shots/20.jpg" width="400"> |
